@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>ProHunt</title>
+    <link rel="stylesheet" href="../static/app.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}">
+    <!-- Custom styles for this template -->
+    <style type="text/css" media="screen">
+        a:hover {
+          text-decoration: none;
+        }
+    </style>
+  </head>
+  <header style="max-height: 7vh;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'logo.png' %}" height="30" width="30" class="d-inline-block align-top"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'create' %}" onClick=""><span class="oi oi-plus"></span></a>
+          <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onClick="">Logout</a>
+          <form id="logout" method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden" />
+          </form>
+            {% else %}
+            <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
+          {% endif %}
+        </div>
+      </div>
+     </div>
+    </nav>
+  </header>
+  <body>
+    <div class="container" style="height: 90vh;">
+      {% block content %}
+      {%  endblock %}
+    </div>
+  </body>

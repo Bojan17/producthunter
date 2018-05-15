@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<hr>
+<div class="detail">
+  <div class="jumbotron">
+    <figure class="figure">
+      <figcaption class="figure-caption"><h1 class="display-4">{{product.title}}</h1></figcaption>
+      <img src="{{product.image.url}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    </figure>
+    <p class="lead">
+      {{product.body}}
+    </p>
+    <div class="col-4">
+      <a href="javascript:{document.getElementById('upvote').submit()}"><button class="btn btn-lg btn-block"  style="background-color: #dddddd; color: #e8684e;"><span class="oi oi-caret-top"></span>UpVote {{ product.votes_total }}</button></a>
+    </div>
+  </div>
+</div>
+
+
+<form id="upvote" method="POST" action="{% url 'upvote' product.id %}">
+  {% csrf_token %}
+  <input type="hidden">
+</form>
+{% endblock %}

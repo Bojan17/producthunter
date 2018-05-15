@@ -1,0 +1,15 @@
+.navbar-nav {
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.product-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
