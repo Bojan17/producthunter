@@ -8,18 +8,18 @@
 {% endif %}
 <h1>LogIn</h1>
 <br />
-<form method="POST" action="{% url 'login' %}">
+<form method="POST" action="{% url 'login' %}" class="form-group">
   {% csrf_token %}
   Username:
   <br />
-  <input type="text" name="username" />
+  <input type="text" name="username" class="form-control"/>
   <br />
   Password:
   <br />
-  <input type="password" name="password" />
+  <input type="password" name="password" class="form-control"/>
   <br />
   <br />
-  <input type="submit" class="btn btn-primary" value="Login" />
+  <input type="submit" class="btn btn-primary" value="Login" class="form-control"/>
 </form>
 
 {% endblock %}

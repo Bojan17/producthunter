@@ -6,19 +6,19 @@
 {{ error }}
 <br />
 {% endif %}
-<form method="POST" action="{% url 'signup' %}">
+<form method="POST" action="{% url 'signup' %}" class="form-group">
   {% csrf_token %}
   Username:
   <br />
-  <input type="text" name="username" />
+  <input type="text" name="username" class="form-control"/>
   <br />
   Password:
   <br />
-  <input type="password" name="password1" />
+  <input type="password" name="password1" class="form-control"/>
   <br />
   Confirm Password:
   <br />
-  <input type="password" name="password2" />
+  <input type="password" name="password2" class="form-control"/>
 
   <br />
   <input type="submit" class="btn btn-primary" name="Sign Up!" />

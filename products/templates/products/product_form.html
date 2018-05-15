@@ -4,23 +4,23 @@
 
 <h1>Create New Product</h1>
 <br />
-<form method="POST" action="{% url 'create' %}" enctype='multipart/form-data'>
+<form method="POST" action="{% url 'create' %}" enctype='multipart/form-data' class="form-group">
   {% csrf_token %}
   Title:
   <br />
-  <input type="text" name="title" />
+  <input type="text" name="title" class="form-control"/>
   <br />
   Body
   <br />
-  <input type="textbox" name="body" />
+  <input type="textbox" name="body" class="form-control"/>
   <br />
   Icon:
   <br />
-  <input type="file" name="icon" />
+  <input type="file" name="icon" class="form-control"/>
   <br />
   Image:
   <br />
-  <input type="file" name="image" />
+  <input type="file" name="image" class="form-control"/>
   <br />
   <br />
   <input type="submit" class="btn btn-primary" value="Create" />
