@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
+<div class="jumbotron mt-2">
+  <div class="jumbo" style="display: flex;flex-direction: row; justify-content:space-around;">
+    <div style="width: 40%;height:40%;">
+      <img src="../../../static/bg.jpg" alt="Nice pic" class="img-thumbnail">
+    </div>
+    <div>
+      <h1 class="display-4" >Hello, Hunter</h1>
+      <p class="lead">Show your product or explore new ones!!!</p>
+    </div>
+  </div>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">Create Product</a>
+</div>
+
 {% for product in products %}
 
 <div class="row mt-3 p-2 product-box"
